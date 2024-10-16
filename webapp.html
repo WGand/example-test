@@ -1,0 +1,37 @@
+<!-- templates/webapp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram WebApp Example</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+    const colorPicker = new iro.ColorPicker('#picker', {
+        width: 320,
+        color: "#f00"
+    });
+
+    colorPicker.on('color:change', function (color) {
+        document.body.style.backgroundColor = color.hexString;
+    });
+
+    Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
+        Telegram.WebApp.sendData(colorPicker.color.hexString);
+    });
+</script>
+<body style="background-color: #ffffff">
+<div id="picker" style="margin: 50px auto; width: 320px; height: 320px;"></div>
+</body>
+<script type="text/javascript">
+    Telegram.WebApp.expand();
+</script>
+</html>
