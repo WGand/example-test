@@ -3,23 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Picker Example</title>
+    <title>Interactive Cards with Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .busyness-normal:hover .busyness-logo {
+            display: none;
+        }
+        .busyness-normal:hover .busyness-logo2 {
+            display: block;
+        }
+        .busyness-logo2 {
+            display: none;
+        }
+        .busyness-normal {
+            transition: transform 0.3s ease;
+        }
+        .busyness-normal:hover {
+            transform: scale(1.05);
+        }
+        .busyness-imagen {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<body>
-
-    <h2>Pick a color:</h2>
-    <input type="color" id="colorPicker" value="#ff0000">
-    <p>Selected Color: <span id="colorValue">#ff0000</span></p>
-
-    <script>
-        const colorPicker = document.getElementById('colorPicker');
-        const colorValue = document.getElementById('colorValue');
-
-        colorPicker.addEventListener('input', function() {
-            colorValue.textContent = colorPicker.value;
-            document.body.style.backgroundColor = colorPicker.value;
-        });
-    </script>
-
+<body class="bg-gray-100">
+<div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
+            <div class="busyness-logo">
+                <img alt="Logo 1" class="busyness-imagen img-responsive" src="/files/marca/logo_normal1.png">
+            </div>
+            <div class="busyness-logo2">
+                <img alt="Logo 1" class="busyness-imagen img-responsive" src="/files/marca/logo_grande1.png">
+            </div>
+        </a>
+        <a href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
+            <div class="busyness-logo">
+                <img alt="Logo 2" class="busyness-imagen img-responsive" src="/files/marca/logo_normal2.png">
+            </div>
+            <div class="busyness-logo2">
+                <img alt="Logo 2" class="busyness-imagen img-responsive" src="/files/marca/harina%20blanca%20220x230.png">
+            </div>
+        </a>
+        <a href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
+            <div class="busyness-logo">
+                <img alt="Logo 3" class="busyness-imagen img-responsive" src="/files/marca/logo_normal3.png">
+            </div>
+            <div class="busyness-logo2">
+                <img alt="Logo 3" class="busyness-imagen img-responsive" src="/files/marca/logo_grande3.png">
+            </div>
+        </a>
+        <a href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
+            <div class="busyness-logo">
+                <img alt="Logo 4" class="busyness-imagen img-responsive" src="/files/marca/logo_normal4.png">
+            </div>
+            <div class="busyness-logo2">
+                <img alt="Logo 4" class="busyness-imagen img-responsive" src="/files/marca/logo_grande4.png">
+            </div>
+        </a>
+    </div>
+</div>
 </body>
 </html>
