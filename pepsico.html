@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Pepsico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Lista de imágenes de Pepsico
+    const images = [
+      { src: 'gatorade_mandarina.jpg', name: 'Gatorade Mandarina' },
+      { src: 'gatorade_mora.jpg', name: 'Gatorade Mora' },
+      { src: 'gatorade_tropicalFruit.jpg', name: 'Gatorade Tropical Fruit' },
+      { src: 'golden_kolita_1.5l.png', name: 'Golden Kolita 1.5L' },
+      { src: 'golden_manza_1.5l.png', name: 'Golden Manzana 1.5L' },
+      { src: 'golden_pina_1.5l.png', name: 'Golden Piña 1.5L' },
+      { src: 'golden_uva_1.5l.png', name: 'Golden Uva 1.5L' },
+      { src: 'lipton_durazno_1.5l.png', name: 'Lipton Durazno 1.5L' },
+      { src: 'lipton_durazno_500ml.png', name: 'Lipton Durazno 500ml' },
+      { src: 'lipton_limon_1.5l.png', name: 'Lipton Limón 1.5L' },
+      { src: 'lipton_limon_500ml.png', name: 'Lipton Limón 500ml' },
+      { src: 'lipton_teVerde_1.5l.png', name: 'Lipton Té Verde 1.5L' },
+      { src: 'lipton_teVerde_500ml.png', name: 'Lipton Té Verde 500ml' },
+      { src: 'pepsi_2l.jpg', name: 'Pepsi 2L' },
+      { src: 'pepsi_lata.jpg', name: 'Pepsi Lata' },
+      { src: 'pepsi_light_2l.jpeg', name: 'Pepsi Light 2L' },
+      { src: 'pepsi_light_lata.jpg', name: 'Pepsi Light Lata' },
+      { src: 'pepsi_zero_1l.jpg', name: 'Pepsi Zero 1L' },
+      { src: 'pepsi_zero_lata.jpg', name: 'Pepsi Zero Lata' }
+    ];
+
+    // Función para cargar dinámicamente el catálogo
+    function loadCatalog() {
+      const catalogContainer = document.getElementById('catalog');
+      images.forEach(image => {
+        const card = `
+          <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+            <img src="files/pepsico/${image.src}" alt="${image.name}" class="w-full h-40 object-contain rounded mb-4">
+            <p class="text-sm font-bold text-black">${image.name}</p>
+          </div>
+        `;
+        catalogContainer.innerHTML += card;
+      });
+    }
+
+    // Llamamos a la función para cargar el catálogo cuando se cargue la página
+    window.onload = loadCatalog;
+  </script>
+</head>
+<body class="bg-gray-900">
+  <div class="container mx-auto py-4">
+    <h1 class="text-white text-3xl font-bold text-center mb-8">Catálogo Pepsico</h1>
+    <div id="catalog" class="grid grid-cols-2 gap-6 w-full max-w-4xl px-4 mx-auto"></div> <!-- Aquí se genera el catálogo -->
+  </div>
+</body>
+</html>
