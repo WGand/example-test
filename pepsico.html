@@ -43,7 +43,29 @@
       });
     }
 
-    // Llamamos a la función para cargar el catálogo cuando se cargue la página
+    // Variables para el deslizamiento táctil
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    // Función para verificar la dirección del deslizamiento
+    function handleGesture() {
+      if (touchendX > touchstartX + 50) { // Swipe hacia la derecha
+        window.history.back(); // Regresar a la página anterior
+      }
+    }
+
+    // Detectar el inicio del toque
+    document.addEventListener('touchstart', function(event) {
+      touchstartX = event.changedTouches[0].screenX;
+    });
+
+    // Detectar el fin del toque
+    document.addEventListener('touchend', function(event) {
+      touchendX = event.changedTouches[0].screenX;
+      handleGesture();
+    });
+
+    // Cargar el catálogo al cargar la página
     window.onload = loadCatalog;
   </script>
 </head>
