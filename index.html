@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Cards with Tailwind CSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .busyness-normal {
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            background-color: white;
-        }
-        .busyness-normal:hover {
-            transform: scale(1.02);
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-        .busyness-imagen {
-            width: 100%;
-            height: auto;
-        }
-        .busyness-imagen-small {
-            width: 50%;
-            height: 50%;
-        }
-        .busyness-imagen-large {
-            transform: scale(1.6);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas con TailwindCSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-<div class="container mx-auto p-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <a href="#" class="block w-full h-[600px] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
-            <div class="h-1/3 flex justify-center items-center">
-                <img alt="Logo 1" class="busyness-imagen img-responsive" src="files/marca/logo_normal1.png">
-            </div>
-            <div class="h-2/3 flex justify-center items-center">
-                <img alt="Logo 1" class="busyness-imagen img-responsive" src="files/marca/logo_grande1.png">
-            </div>
-        </a>
-        <a href="#" class="block w-full h-[600px] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
-            <div class="h-1/3 flex justify-center items-center">
-                <img alt="Logo 2" class="busyness-imagen img-responsive" src="files/marca/logo_normal2.png">
-            </div>
-            <div class="h-2/3 flex justify-center items-center">
-                <img alt="Logo 2" class="busyness-imagen img-responsive" src="files/marca/harina%20blanca%20220x230.png">
-            </div>
-        </a>
-        <a href="#" class="block w-full h-[600px] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
-            <div class="h-1/3 flex justify-center items-center">
-                <img alt="Logo 3" class="busyness-imagen img-responsive" src="files/marca/logo_normal3.png">
-            </div>
-            <div class="h-2/3 flex justify-center items-center">
-                <img alt="Logo 3" class="busyness-imagen img-responsive" src="files/marca/logo_grande3.png">
-            </div>
-        </a>
-        <a href="#" class="block w-full h-[600px] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 busyness-normal">
-            <div class="h-1/3 flex justify-center items-center">
-                <img alt="Logo 4" class="busyness-imagen img-responsive busyness-imagen-small" src="files/marca/logo_normal4.png">
-            </div>
-            <div class="h-2/3 flex justify-center items-center">
-                <img alt="Logo 4" class="busyness-imagen img-responsive busyness-imagen-large" src="files/marca/logo_grande4.png">
-            </div>
-        </a>
+<body class="bg-gray-900">
+  <div class="flex justify-center items-center min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4">
+      
+      <!-- Tarjeta 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-xl md:text-2xl font-bold mb-4 text-black">CyM</h2>
+        <div class="h-40 md:h-48 flex justify-center items-center mb-4">
+          <img alt="Imagen 1" class="max-h-full max-w-full object-contain rounded" src="files/marca/logo_normal1.png">
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-xl md:text-2xl font-bold mb-4 text-black">APC</h2>
+        <div class="h-40 md:h-48 flex justify-center items-center mb-4">
+          <img alt="Imagen 2" class="max-h-full max-w-full object-contain rounded" src="files/marca/logo_normal2.png">
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-xl md:text-2xl font-bold mb-4 text-black">Pepsico</h2>
+        <div class="h-40 md:h-48 flex justify-center items-center mb-4">
+          <img alt="Imagen 3" class="max-h-full max-w-full object-contain rounded" src="files/marca/logo_normal3.png">
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-xl md:text-2xl font-bold mb-4 text-black">P&G</h2>
+        <div class="h-40 md:h-48 flex justify-center items-center mb-4">
+          <img alt="Imagen 4" class="max-h-full max-w-full object-contain rounded" src="files/marca/logo_normal4.png">
+        </div>
+      </div>
+
     </div>
-</div>
+  </div>
 </body>
 </html>
